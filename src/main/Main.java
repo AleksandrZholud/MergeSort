@@ -67,8 +67,9 @@ public class Main
         for ( int i = 0 ; i < mass.length ; i++ ) mass[ i ] = rnd.nextInt( maxElementValue );
         
         long now = System.currentTimeMillis();
-        System.out.printf( "%nInit finished in %s ms. (in %s seconds)\t\t" , now - start ,
+        /*System.out.printf( "%nInit finished in %s ms. (in %s seconds)\t\t" , now - start ,
                            ( now - start ) / 1000.0 );
+        */
         return mass;
     }
     
