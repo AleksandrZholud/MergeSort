@@ -1,18 +1,20 @@
 # Merge Sort
 This program shows how much time you should spend sorting with the merge algorithm.
 
-In each variant we used array of one million random generated integers.
-But the maximum value of elements are different:
-1. max is 10 //all elements are 0-9
+I know if array is minimal-sorted it takes less time to sort it.
+Lets check it out!
+
+I have one million random generated integers in arrays. The maximum values will be different for pretending middle/minimal-sorted (1st and 2nd variant):
+1. max is 10
 2. max is 100 000
 3. max is 1 000 000 000
 
-I know when array is minimal-sorted it takes less time to sort it.
-Finally I saw that it is not very objective if you have an array of integers.
-
-Output show you that it doesen't matter what integers you sorting, because algorithm is very fast.
+Output show you that it doesn't matter what integers you sorting, because algorithm is very quickly.
 ![image](https://user-images.githubusercontent.com/29590727/133067604-86844c12-bdf7-4c6d-bad0-91f7d92dcd61.png)
 
-I think now you think "ok, what about bigger array?"
-I include next output with one thousand milion random elements sorting)
+Ok, what about bigger array, is it takes similar time?
+I include next output with one hundred million random elements sorting)
+![image](https://user-images.githubusercontent.com/29590727/133098740-5c5d8c31-8ee6-4aa4-9bb7-3952bcda3c13.png)
 
+How about sorting an array that's already sorted in reverse order?
+![image](https://user-images.githubusercontent.com/29590727/133097240-4999f46f-a9e9-4275-8c67-0e26fb10ba3c.png)
