@@ -11,7 +11,7 @@ public class Main
         while ( i-- > 0 )
         {
             int[] mass = initRandomMass( 1000000 , maxValue );
-            print( mass ); //for small (<20 elem) arrays using
+            print( mass ); //for small arrays using (<20 elem)
             
             long start = System.currentTimeMillis();
             MergeSort( mass );
