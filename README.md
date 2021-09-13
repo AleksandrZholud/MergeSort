@@ -29,7 +29,7 @@ This is 1 million elements array:
 ![image](https://user-images.githubusercontent.com/29590727/133097240-4999f46f-a9e9-4275-8c67-0e26fb10ba3c.png)
 
 If you want to sort an array by reverse order, I think this algorithm is the best.
-And it's doesn't matter you must sort the same elements or different elements in reverse order sorted array.
+And it's doesn't matter you must sort the same elements or different elements in reverse order.
 Somehow weirdly sorts the dissimilar elements array faster than very similar elements array)
 
 ![image](https://user-images.githubusercontent.com/29590727/133108837-e70d1170-8a5e-4e76-9078-d95b7106d7ce.png)
