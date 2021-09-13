@@ -34,9 +34,14 @@ Somehow weirdly sorts the dissimilar elements array faster than very similar ele
 
 ![image](https://user-images.githubusercontent.com/29590727/133108837-e70d1170-8a5e-4e76-9078-d95b7106d7ce.png)
 
+---
 Some statistics:
-
 ---
-1: 11
-2: 22
----
+| size of array | consist | time | | |
+| ------ | ------ | ------ | - | ------ |
+| 1 000 | sorted | 12 | | |
+| 10 000 | sorted | 12 | | |
+| 100 000 | sorted | 12 | | |
+| 1 000 000 | sorted | 12 | | |
+| 10 000 000 | sorted | 12 | | |
+| 100 000 000 | sorted | 12 | | |
