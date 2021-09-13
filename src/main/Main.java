@@ -1,16 +1,17 @@
 package main;
 
 import java.util.Random;
-import java.text.*;
+import java.text.DecimalFormat;
 
 public class Main
 {
     public static void main( String[] args )
     {
-        int i = 3, maxValue = 10;
+        int i = 3, maxValue = 10, length = 1000000;
         while ( i-- > 0 )
         {
-            int[] mass = initRandomMass( 1000000 , maxValue );
+            int[] mass = initSortedMass( length , maxValue , false );
+            //int[] mass = initRandomMass( length , maxValue );
             print( mass ); //for small arrays using (<20 elem)
             
             long start = System.currentTimeMillis();
@@ -18,19 +19,18 @@ public class Main
             long now = System.currentTimeMillis();
             
             System.out.printf(
-                    "[%s - length]  [%s - max value]\n" +
-                    "=== finished === in %s ms. (in %s seconds)%n" ,
+                    "%n[%s - length]  [%s - max value]\n======= finished ======= in %s ms. (in %s seconds)%n" ,
                     customFormat( "###,###,###,###" , mass.length ) ,
                     customFormat( "###,###,###,###" , maxValue ) , now - start ,
                     ( now - start ) / 1000.0 );
-            print( mass );
+            
             maxValue *= 10000;
         }
     }
     
     public static void print( Object s )
     {
-        System.out.print( s.toString() + "\t" );
+        System.out.print( s.toString() );
     }
     
     public static void print( int[] mass )
@@ -39,9 +39,8 @@ public class Main
         {
             for ( int a : mass )
             {
-                print( a );
+                print( a + "\t" );
             }
-            print( "\n" );
         }
     }
     
@@ -60,16 +59,35 @@ public class Main
     
     public static int[] initRandomMass( int length , int maxElementValue )
     {
-        long start = System.currentTimeMillis();
-        
         int[] mass = new int[ length ];
         Random rnd = new Random();
         for ( int i = 0 ; i < mass.length ; i++ ) mass[ i ] = rnd.nextInt( maxElementValue );
         
-        long now = System.currentTimeMillis();
-        /*System.out.printf( "%nInit finished in %s ms. (in %s seconds)\t\t" , now - start ,
-                           ( now - start ) / 1000.0 );
-        */
+        return mass;
+    }
+    
+    public static int[] initSortedMass( int length , int maxElementValue , boolean asc )
+    {
+        int[] mass = new int[ length ];
+        int coeficient = Integer.max( length , maxElementValue ) / Integer.min( length ,
+                                                                                maxElementValue ) + 1;
+        if ( asc )
+        {
+            int nowValue = 0, tmpCountOfSames = 1;
+            for ( int i = 0 ; i < mass.length ; i++ )
+            {
+                mass[ i ] = tmpCountOfSames++ % coeficient == 0 ? nowValue : nowValue++;
+            }
+        }
+        else
+        {
+            int nowValue = maxElementValue, tmpCountOfSames = 1;
+            for ( int i = 0 ; i < mass.length ; i++ )
+            {
+                mass[ i ] = tmpCountOfSames++ % coeficient == 0 ? nowValue : nowValue--;
+            }
+        }
+        
         return mass;
     }
     
