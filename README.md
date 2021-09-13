@@ -16,7 +16,10 @@ I include next output with one hundred million random elements sorting)
 
 ![image](https://user-images.githubusercontent.com/29590727/133098740-5c5d8c31-8ee6-4aa4-9bb7-3952bcda3c13.png)
 
-As you can see, sorting minimal-sorted array and unsorted array (2nd and 3rd output) are very same by the time. Only ~15% difference.
+As you can see, sorting minimal-sorted array and unsorted array (2nd and 3rd output) are very same by the time.
+
+Only ~15% difference!
+
 But if you have middle-sorted array, you will spend ~70% less time. 
 
 ## How about sorting an array that's already sorted in reverse order?
