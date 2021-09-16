@@ -8,21 +8,17 @@ public class Main
     public static void main( String[] args )
     {
         int maxValue = 1000000000, length = 1000;
-        int i = 6;
-        while ( i-- > 1 )
-        {
-            length *= 10;
-            int[] array = initSortedMass( length , maxValue , true );
-            //int[] array = initSortedMass( length , maxValue , false );
-            //int[] array = initRandomMass( length , maxValue );
-            
-            long start = System.currentTimeMillis();
-            MergeSort( array );
-            long now = System.currentTimeMillis();
-            
-            print( array ); //works with length <20
-            showStatistic( now - start , array , maxValue );
-        }
+        
+        //int[] array = initSortedMass( length , maxValue , true );
+        //int[] array = initSortedMass( length , maxValue , false ); //reverse-order
+        int[] array = initRandomMass( length , maxValue );
+        
+        long start = System.currentTimeMillis();
+        MergeSort( array );
+        long now = System.currentTimeMillis();
+        
+        print( array ); //works with length <20
+        showStatistic( now - start , array , maxValue );
     }
     
     public static void showStatistic( long millisecond , int[] array , int maxValue )
