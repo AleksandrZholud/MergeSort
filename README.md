@@ -75,12 +75,12 @@ Some statistics:
 public static void MergeSort( int[] array )
     {
         int[] tmpMass = array.clone();
-        int mid,//Max length of lefts
-                r_end,//Max length of rights
-                len = array.length,//length of array
-                left,//left side pointer
-                right,//right side pointer
-                counter;//counter of accepted (sorted) elements
+        int mid,            //Max length of lefts
+                r_end,      //Max length of rights
+                len = array.length,
+                left,       //left side pointer
+                right,      //right side pointer
+                counter;    //counter of accepted (sorted) elements
         
         for ( int i = 1 ; i <= len ; i *= 2 )
         {
@@ -115,11 +115,10 @@ public static void MergeSort( int[] array )
                 }
             }
             
-            /*for ( counter = 0; counter < len ; counter++ )
+            for ( counter = 0; counter < len ; counter++ )
             {
                 array[ counter ] = tmpMass[ counter ];
-            }*/
-            System.arraycopy( tmpMass , 0 , array , 0 , len );
+            }
         }
     }
 ```
