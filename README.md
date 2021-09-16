@@ -29,14 +29,14 @@ But if you have middle-sorted array, you will spend ~70% less time.
 
 This is output of sorting a 1 million elements array:
 
-> [1 000 000 - length]   [10 - max value]
 > In 116 ms. (in 0.116 seconds) finished
+> [1 000 000 - length]   [10 - max value]
 >
-> [1 000 000 - length]   [100 000 - max value]
 > In 79 ms. (in 0.079 seconds) finished
+> [1 000 000 - length]   [100 000 - max value]
 >
-> [1 000 000 - length]   [1 000 000 000 - max value]
 > In 92 ms. (in 0.092 seconds) finished
+> [1 000 000 - length]   [1 000 000 000 - max value]
 
 If you want to sort an array by reverse order, I think this algorithm is the best.
 And it's doesn't matter you must sort the same elements or different elements in reverse order.
