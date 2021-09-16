@@ -7,25 +7,30 @@ public class Main
 {
     public static void main( String[] args )
     {
-        int maxValue = 10, length = 10;
-        
-        //int[] array = initSortedMass( length , maxValue , false );
-        int[] array = initRandomMass( length , maxValue );
-        
-        long start = System.currentTimeMillis();
-        MergeSort( array );
-        long now = System.currentTimeMillis();
-        
-        showStatistic( start - now , array , maxValue );
+        int maxValue = 1000000000, length = 1000;
+        int i = 6;
+        while ( i-- > 1 )
+        {
+            length *= 10;
+            int[] array = initSortedMass( length , maxValue , true );
+            //int[] array = initSortedMass( length , maxValue , false );
+            //int[] array = initRandomMass( length , maxValue );
+            
+            long start = System.currentTimeMillis();
+            MergeSort( array );
+            long now = System.currentTimeMillis();
+            
+            print( array ); //works with length <20
+            showStatistic( now - start , array , maxValue );
+        }
     }
     
-    public static void showStatistic( long millisecond, int[] array , int maxValue )
+    public static void showStatistic( long millisecond , int[] array , int maxValue )
     {
-        System.out.printf(
-                "%n[%s - length]  [%s - max value]\nmilliseconds== finished  in %s ms. (in %s seconds)" ,
-                customFormat( "###,###,###,###" , array.length ) ,
-                customFormat( "###,###,###,###" , maxValue ) , millisecond ,
-                ( millisecond ) / 1000.0 );
+        System.out.printf( "%n[%s - length]  [%s - max value]\nIn %s ms. (in %s seconds) finished" ,
+                           customFormat( "###,###,###,###" , array.length ) ,
+                           customFormat( "###,###,###,###" , maxValue ) , millisecond ,
+                           ( millisecond ) / 1000.0 );
     }
     
     public static void print( int[] array )
@@ -37,6 +42,7 @@ public class Main
                 System.out.print( a + "\t" );
             }
         }
+        else System.out.println();
     }
     
     static public String customFormat( String pattern , double value )
@@ -46,10 +52,11 @@ public class Main
             DecimalFormat myFormatter = new DecimalFormat( pattern );
             pattern = myFormatter.format( value );
         }
-        finally
+        catch ( Exception e )
         {
-            return pattern;
+            //ignore..
         }
+        return pattern;
     }
     
     public static int[] initRandomMass( int length , int maxElementValue )

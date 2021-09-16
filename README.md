@@ -39,14 +39,35 @@ It weirdly sorts the dissimilar elements array faster than very similar elements
 
 Some statistics:
 ---
-| size of array | consist | time | consist | time | consist | time |
+> Max value of elements is 10
+
+| size of array | composition | time | composition | time | composition | time |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 000 | sorted |  | reverse-order sorted| | random | 1 |
-| 10 000 | sorted |  | reverse-order sorted| | random | 1 |
-| 100 000 | sorted |  | reverse-order sorted| | random | 1 |
-| 1 000 000 | sorted |  | reverse-order sorted| | random | 1 |
-| 10 000 000 | sorted |  | reverse-order sorted| | random | 1 |
-| 100 000 000 | sorted |  | reverse-order sorted| | random | 1 |
+| 10 000 | sorted | 0.007 sec | reverse-order | 0.008 sec | random | 0.009 sec |
+| 100 000 | sorted | 0.020 sec | reverse-order | 0.055 sec | random | 0.051 sec |
+| 1 000 000 | sorted | 0.076 sec | reverse-order | 0.110 sec | random | 0.203 sec |
+| 10 000 000 | sorted | 0.940 sec | reverse-order | 0.911 sec | random | 1.959 sec |
+| 100 000 000 | sorted | 6.140 sec | reverse-order | 8.356 sec | random | 14.286 sec |
+
+> Max value of elements is 100 000
+
+| size of array | composition | time | composition | time | composition | time |
+| --- | --- | --- | --- | --- | --- | --- |
+| 10 000 | sorted | 0.010 sec | reverse-order | 0.006 sec | random | 0.007 sec |
+| 100 000 | sorted | 0.023 sec | reverse-order | 0.032 sec | random | 0.021 sec |
+| 1 000 000 | sorted | 0.112 sec | reverse-order | 0.091 sec | random | 0.211 sec |
+| 10 000 000 | sorted | 0.976 sec | reverse-order | 1.022 sec | random | 2.501 sec |
+| 100 000 000 | sorted | 6.992 sec | reverse-order | 6.742 sec | random | 23.764 sec |
+
+> Max value of elements is 1 000 000 000
+
+| size of array | composition | time | composition | time | composition | time |
+| --- | --- | --- | --- | --- | --- | --- |
+| 10 000 | sorted | 0.008 sec | reverse-order | 0.006 sec | random | 0.009 sec |
+| 100 000 | sorted | 0.027 sec | reverse-order | 0.022 sec | random | 0.022 sec |
+| 1 000 000 | sorted | 0.116 sec | reverse-order | 0.103 sec | random | 0.329 sec |
+| 10 000 000 | sorted | 0.945 sec | reverse-order | 1.055 sec | random | 2.918 sec |
+| 100 000 000 | sorted | 5.904 sec | reverse-order | 6.954 sec | random | 28.249 sec |
 
 ---
 ## Algorithm method
