@@ -13,9 +13,7 @@ I have one million random generated integers in arrays. The maximum values will 
 
 ![image](https://user-images.githubusercontent.com/29590727/133105635-96e13033-57bd-4cbc-aa33-c33f78eaf0f1.png)
 
-I think this array is very small to see changes in time.
-
-### Ok, what about bigger array, is it takes similar time?
+### Are the differences in sorting time of a larger array just as similar?
 
 I include next output with one hundred million random elements sorting)
 
