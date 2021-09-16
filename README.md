@@ -1,5 +1,5 @@
 # Merge Sort
-_//If you only want to copy algorithm method, [click here](https://github.com/AleksandrZholud/MergeSort/blob/main/README.md#algorithm-method)_
+_//If you only want to copy algorithm method [click here](https://github.com/AleksandrZholud/MergeSort/blob/main/README.md#algorithm-method)._
 
 This program shows how much time you should spend sorting with the merge algorithm.
 
