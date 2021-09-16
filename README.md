@@ -27,9 +27,17 @@ But if you have middle-sorted array, you will spend ~70% less time.
 
 ## How about sorting an array that's already sorted in reverse order?
 
-This is 1 million elements array:
+This is output of sorting a 1 million elements array:
 
-![image](https://user-images.githubusercontent.com/29590727/133097240-4999f46f-a9e9-4275-8c67-0e26fb10ba3c.png)
+> [1 000 000 - length]   [10 - max value]
+> In 116 ms. (in 0.116 seconds) finished
+>
+>> [1 000 000 - length]   [100 000 - max value]
+> In 79 ms. (in 0.079 seconds) finished
+>
+>>> [1 000 000 - length]   [1 000 000 000 - max value]
+> In 92 ms. (in 0.092 seconds) finished
+>
 
 If you want to sort an array by reverse order, I think this algorithm is the best.
 And it's doesn't matter you must sort the same elements or different elements in reverse order.
