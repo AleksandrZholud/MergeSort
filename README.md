@@ -16,7 +16,7 @@ I have one million random generated integers in arrays. The maximum values will 
 I think this array is very small to see changes in time.
 
 ### Ok, what about bigger array, is it takes similar time?
-//if you only want to copy
+
 I include next output with one hundred million random elements sorting)
 
 ![image](https://user-images.githubusercontent.com/29590727/133098740-5c5d8c31-8ee6-4aa4-9bb7-3952bcda3c13.png)
