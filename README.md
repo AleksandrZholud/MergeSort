@@ -13,7 +13,7 @@ I have one million random generated integers in arrays. The maximum values will 
 
 ![image](https://user-images.githubusercontent.com/29590727/133105635-96e13033-57bd-4cbc-aa33-c33f78eaf0f1.png)
 
-### Are the differences in sorting time of a larger array just as similar?
+### Are the differences in time of sorting a larger array just as similar?
 
 I include next output with one hundred million random elements sorting)
 
