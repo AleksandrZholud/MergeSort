@@ -17,11 +17,11 @@ I have one million random generated integers in arrays. The maximum values will 
 
 I include next output with one hundred million random elements sorting)
 
-> In 13686 ms. (in 13.686 seconds) finished   [100 000 000 - length]   [10 - max value]
+> In 13686 ms. (in 13.686 seconds) finished   [100 000 000 - length]   [10 - max value]
 >
-> In 22750 ms. (in 22.750 seconds) finished   [100 000 000 - length]   [100 000 - max value]
+> In 22750 ms. (in 22.750 seconds) finished   [100 000 000 - length]   [100 000 - max value]
 >
-> In 26858 ms. (in 26.858 seconds) finished   [100 000 000 - length]   [1 000 000 000 - max value]
+> In 26858 ms. (in 26.858 seconds) finished   [100 000 000 - length]   [1 000 000 000 - max value]
 
 As you can see, sorting minimal-sorted array and unsorted array (2nd and 3rd output) are very same by the time.
 
