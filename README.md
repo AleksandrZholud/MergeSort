@@ -1,5 +1,5 @@
 # Merge Sort
-_//If you only want to copy algorithm method [click here](https://github.com/AleksandrZholud/MergeSort/blob/main/README.md#algorithm-method)._
+>_If you only want to copy algorithm method [click here](https://github.com/AleksandrZholud/MergeSort/blob/main/README.md#algorithm-method)._
 
 This program shows how much time you should spend sorting with the merge algorithm.
 
@@ -40,7 +40,7 @@ It weirdly sorts the dissimilar elements array faster than very similar elements
 Some statistics:
 ---
 | size of array | consist | time | consist | time | consist | time |
-| ------ | ------ | ------ | - | ------ | - | - |
+| --- | --- | --- | --- | --- | --- | --- |
 | 1 000 | sorted |  | reverse-order sorted| | random | 1 |
 | 10 000 | sorted |  | reverse-order sorted| | random | 1 |
 | 100 000 | sorted |  | reverse-order sorted| | random | 1 |
