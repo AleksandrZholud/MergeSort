@@ -7,39 +7,34 @@ public class Main
 {
     public static void main( String[] args )
     {
-        int i = 3, maxValue = 10, length = 1000000;
-        while ( i-- > 0 )
-        {
-            int[] mass = initSortedMass( length , maxValue , false );
-            //int[] mass = initRandomMass( length , maxValue );
-            print( mass ); //for small arrays using (<20 elem)
-            
-            long start = System.currentTimeMillis();
-            MergeSort( mass );
-            long now = System.currentTimeMillis();
-            
-            System.out.printf(
-                    "%n[%s - length]  [%s - max value]\n======= finished ======= in %s ms. (in %s seconds)%n" ,
-                    customFormat( "###,###,###,###" , mass.length ) ,
-                    customFormat( "###,###,###,###" , maxValue ) , now - start ,
-                    ( now - start ) / 1000.0 );
-            
-            maxValue *= 10000;
-        }
+        int maxValue = 10, length = 10;
+        
+        //int[] array = initSortedMass( length , maxValue , false );
+        int[] array = initRandomMass( length , maxValue );
+        
+        long start = System.currentTimeMillis();
+        MergeSort( array );
+        long now = System.currentTimeMillis();
+        
+        showStatistic( start - now , array , maxValue );
     }
     
-    public static void print( Object s )
+    public static void showStatistic( long millisecond, int[] array , int maxValue )
     {
-        System.out.print( s.toString() );
+        System.out.printf(
+                "%n[%s - length]  [%s - max value]\nmilliseconds== finished  in %s ms. (in %s seconds)" ,
+                customFormat( "###,###,###,###" , array.length ) ,
+                customFormat( "###,###,###,###" , maxValue ) , millisecond ,
+                ( millisecond ) / 1000.0 );
     }
     
-    public static void print( int[] mass )
+    public static void print( int[] array )
     {
-        if ( mass.length < 20 )
+        if ( array.length < 20 )
         {
-            for ( int a : mass )
+            for ( int a : array )
             {
-                print( a + "\t" );
+                System.out.print( a + "\t" );
             }
         }
     }
@@ -59,47 +54,47 @@ public class Main
     
     public static int[] initRandomMass( int length , int maxElementValue )
     {
-        int[] mass = new int[ length ];
+        int[] array = new int[ length ];
         Random rnd = new Random();
-        for ( int i = 0 ; i < mass.length ; i++ ) mass[ i ] = rnd.nextInt( maxElementValue );
+        for ( int i = 0 ; i < array.length ; i++ ) array[ i ] = rnd.nextInt( maxElementValue );
         
-        return mass;
+        return array;
     }
     
     public static int[] initSortedMass( int length , int maxElementValue , boolean asc )
     {
-        int[] mass = new int[ length ];
+        int[] array = new int[ length ];
         int coeficient = Integer.max( length , maxElementValue ) / Integer.min( length ,
                                                                                 maxElementValue ) + 1;
         if ( asc )
         {
             int nowValue = 0, tmpCountOfSames = 1;
-            for ( int i = 0 ; i < mass.length ; i++ )
+            for ( int i = 0 ; i < array.length ; i++ )
             {
-                mass[ i ] = tmpCountOfSames++ % coeficient == 0 ? nowValue : nowValue++;
+                array[ i ] = tmpCountOfSames++ % coeficient == 0 ? nowValue : nowValue++;
             }
         }
         else
         {
             int nowValue = maxElementValue, tmpCountOfSames = 1;
-            for ( int i = 0 ; i < mass.length ; i++ )
+            for ( int i = 0 ; i < array.length ; i++ )
             {
-                mass[ i ] = tmpCountOfSames++ % coeficient == 0 ? nowValue : nowValue--;
+                array[ i ] = tmpCountOfSames++ % coeficient == 0 ? nowValue : nowValue--;
             }
         }
         
-        return mass;
+        return array;
     }
     
-    public static void MergeSort( int[] mass )
+    public static void MergeSort( int[] array )
     {
-        int[] tmpMass = mass.clone();
-        int mid,//максимальная длина левой стороны
-                r_end,//максимальная длина правой стороны
-                len = mass.length,//просто длинна масива
-                left,//указатель левого конца
-                right,//указатель правого конца
-                counter;
+        int[] tmpMass = array.clone();
+        int mid,//Max length of lefts
+                r_end,//Max length of rights
+                len = array.length,//length of array
+                left,//left side pointer
+                right,//right side pointer
+                counter;//counter of accepted (sorted) elements
         
         for ( int i = 1 ; i <= len ; i *= 2 )
         {
@@ -108,37 +103,37 @@ public class Main
                 mid = startLeft + i;
                 r_end = mid + i;
                 if ( r_end > len ) r_end = len;
-                counter = startLeft;
-                left = startLeft;
+                left = counter = startLeft;
                 right = mid;
                 
-                while ( left < mid && right < r_end ) //пока не вылезем за пределы стороны
+                while ( left < mid && right < r_end ) //while we in left and in right sides
                 {
-                    if ( mass[ left ] <= mass[ right ] )
+                    if ( array[ left ] <= array[ right ] )
                     {
-                        tmpMass[ counter++ ] = mass[ left++ ];
+                        tmpMass[ counter++ ] = array[ left++ ];
                     }
                     else
                     {
-                        tmpMass[ counter++ ] = mass[ right++ ];
+                        tmpMass[ counter++ ] = array[ right++ ];
                     }
                 }
                 
-                while ( left < mid ) //добивка левой стороны
+                while ( left < mid ) //finishing left side
                 {
-                    tmpMass[ counter++ ] = mass[ left++ ];
+                    tmpMass[ counter++ ] = array[ left++ ];
                 }
                 
-                while ( right < r_end ) //добивка правой стороны
+                while ( right < r_end ) //finishing right side
                 {
-                    tmpMass[ counter++ ] = mass[ right++ ];
+                    tmpMass[ counter++ ] = array[ right++ ];
                 }
             }
             
-            for ( counter = 0; counter < len ; counter++ )
+            /*for ( counter = 0; counter < len ; counter++ )
             {
-                mass[ counter ] = tmpMass[ counter ];
-            }
+                array[ counter ] = tmpMass[ counter ];
+            }*/
+            System.arraycopy( tmpMass , 0 , array , 0 , len );
         }
     }
 }
