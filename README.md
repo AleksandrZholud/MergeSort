@@ -17,12 +17,16 @@ I have one million random generated integers in arrays. The maximum values will 
 
 I include next output with one hundred million random elements sorting)
 
-> In 13686 ms. (in 13.686 seconds) finished   [100 000 000 - length]   [10 - max value]
->
-> In 22750 ms. (in 22.750 seconds) finished   [100 000 000 - length]   [100 000 - max value]
->
-> In 26858 ms. (in 26.858 seconds) finished   [100 000 000 - length]   [1 000 000 000 - max value]
+```sh
+[100 000 000 - length]   [10 - max value]
+In 13686 ms. (in 13.686 seconds) finished  
 
+[100 000 000 - length]   [100 000 - max value]
+In 22750 ms. (in 22.750 seconds) finished  
+
+[100 000 000 - length]   [1 000 000 000 - max value]
+In 26858 ms. (in 26.858 seconds) finished  
+```
 As you can see, sorting minimal-sorted array and unsorted array (2nd and 3rd output) are very same by the time.
 
 Only ~15% difference!
@@ -32,16 +36,16 @@ But if you have middle-sorted array, you will spend ~70% less time.
 ## How about sorting an array that's already sorted in reverse order?
 
 This is output of sorting a 1 million elements array:
+```sh
+[1 000 000 - length]   [10 - max value]
+In 116 ms. (in 0.116 seconds) finished  
 
-> In 116 ms. (in 0.116 seconds) finished  
-> [1 000 000 - length]   [10 - max value]
->
-> In 79 ms. (in 0.079 seconds) finished  
-> [1 000 000 - length]   [100 000 - max value]
->
-> In 92 ms. (in 0.092 seconds) finished  
-> [1 000 000 - length]   [1 000 000 000 - max value]
+[1 000 000 - length]   [100 000 - max value]
+In 79 ms. (in 0.079 seconds) finished  
 
+[1 000 000 - length]   [1 000 000 000 - max value]
+In 92 ms. (in 0.092 seconds) finished  
+```
 If you want to sort an array by reverse order, I think this algorithm is the best.
 And it's doesn't matter you must sort the same elements or different elements in reverse order.
 It weirdly sorts the dissimilar elements array faster than very similar elements array)
