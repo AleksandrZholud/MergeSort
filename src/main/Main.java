@@ -109,7 +109,7 @@ public class Main
                 left = counter = startLeft;
                 right = mid;
                 
-                while ( left < mid && right < r_end ) //while we in left and in right sides
+                while ( left < mid && right < r_end ) //while we in left and right sides
                 {
                     if ( array[ left ] <= array[ right ] )
                     {
