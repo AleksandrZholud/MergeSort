@@ -7,7 +7,7 @@ public class Main
 {
     public static void main( String[] args )
     {
-        int maxValue = 1000000000, length = 1000;
+        int maxValue = 100000000, length = 1000;
         
         //int[] array = initSortedMass( length , maxValue , true );
         //int[] array = initSortedMass( length , maxValue , false ); //reverse-order
@@ -50,6 +50,7 @@ public class Main
         }
         catch ( Exception e )
         {
+            
             //ignore..
         }
         return pattern;
