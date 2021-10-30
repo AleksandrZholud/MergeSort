@@ -7,7 +7,7 @@ public class Main
 {
     public static void main( String[] args )
     {
-        int maxValue = 100000000, length = 1000;
+        int maxValue = 100, length = 100000000;
         
         //int[] array = initSortedMass( length , maxValue , true );
         //int[] array = initSortedMass( length , maxValue , false ); //reverse-order
@@ -133,11 +133,11 @@ public class Main
                 }
             }
             
-            /*for ( counter = 0; counter < len ; counter++ )
+            for ( counter = 0; counter < len ; counter++ )
             {
                 array[ counter ] = tmpMass[ counter ];
-            }*/
-            System.arraycopy( tmpMass , 0 , array , 0 , len );
+            }
+            //System.arraycopy( tmpMass , 0 , array , 0 , len );
         }
     }
 }
