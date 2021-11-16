@@ -57,7 +57,7 @@ Some statistics:
 > Max value of elements is 10
 
 | size of array | composition | time | composition | time | composition | time |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | :---: | --- | :---: | --- | :---: | --- |
 | 10 000 | sorted | 0.007 sec | reverse-order | 0.008 sec | random | 0.009 sec |
 | 100 000 | sorted | 0.020 sec | reverse-order | 0.055 sec | random | 0.051 sec |
 | 1 000 000 | sorted | 0.076 sec | reverse-order | 0.110 sec | random | 0.203 sec |
@@ -67,7 +67,7 @@ Some statistics:
 > Max value of elements is 100 000
 
 | size of array | composition | time | composition | time | composition | time |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | :---: | --- | :---: | --- | :---: | --- |
 | 10 000 | sorted | 0.010 sec | reverse-order | 0.006 sec | random | 0.007 sec |
 | 100 000 | sorted | 0.023 sec | reverse-order | 0.032 sec | random | 0.021 sec |
 | 1 000 000 | sorted | 0.112 sec | reverse-order | 0.091 sec | random | 0.211 sec |
@@ -77,7 +77,7 @@ Some statistics:
 > Max value of elements is 1 000 000 000
 
 | size of array | composition | time | composition | time | composition | time |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | :---: | --- | :---: | --- | :---: | --- |
 | 10 000 | sorted | 0.008 sec | reverse-order | 0.006 sec | random | 0.009 sec |
 | 100 000 | sorted | 0.027 sec | reverse-order | 0.022 sec | random | 0.022 sec |
 | 1 000 000 | sorted | 0.116 sec | reverse-order | 0.103 sec | random | 0.329 sec |
